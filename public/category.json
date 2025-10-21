@@ -1,0 +1,189 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fruit",
+      "description": "Fresh and organic fruits for your healthy lifestyle.",
+      "image": "https://i.ibb.co.com/8gdN9wZN/Apple.webp",
+      "items": [
+        {
+          "id": 101,
+          "name": "Coconut",
+          "price": 50.00,
+          "unit": "pcs",
+          "image": "https://i.ibb.co.com/4vG11Zs/13.png",
+          "babge":"new"
+       
+        },
+        {
+          "id": 102,
+          "name": "Green Coconut",
+          "price": 60.00,
+          "unit": "pcs",
+          "image": "https://i.ibb.co.com/3PKs8W5/12.png",
+          "babge":"new"
+        },
+        {
+          "id": 103,
+          "name": "Apple",
+          "price": 180.00,
+          "unit": "kg",
+          "image": "https://i.ibb.co.com/rGZfPzP1/2.png",
+          "babge":"new"
+        },
+        {
+          "id": 104,
+          "name": "Banana",
+          "price": 40.00,
+          "unit": "dozen",
+          "image": "https://i.ibb.co.com/0ptCj2JM/14.png",
+          "babge":"new"
+        },
+        {
+          "id": 105,
+          "name": "Banana",
+          "price": 40.00,
+          "unit": "dozen",
+          "image": "https://i.ibb.co.com/0ptCj2JM/14.png",
+          "babge":"new"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Beverages",
+      "description": "Cool and refreshing soft drinks and beverages.",
+      "image": "https://i.ibb.co.com/MxkLJRk8/mojo.jpg",
+      "items": [
+        {
+          "id": 201,
+          "name": "Mojo",
+          "price": 25.00,
+          "unit": "bottle",
+          "image": "https://i.ibb.co.com/N6djw6ys/11.png",
+          "babge":"old"
+        },
+        {
+          "id": 202,
+          "name": "Coca Cola",
+          "price": 35.00,
+          "unit": "bottle",
+          "image": "https://i.ibb.co.com/ch98L4TK/16.png",
+          "babge":"old"
+        },
+        {
+          "id": 203,
+          "name": "7 Up",
+          "price": 30.00,
+          "unit": "bottle",
+          "image": "https://i.ibb.co.com/nqgpMYQc/1.png",
+          "babge":"old"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Vegetables",
+      "description": "Daily fresh vegetables sourced directly from local farms.",
+      "image": "https://i.ibb.co.com/B28HNYJz/fresh-potato.jpg",
+      "items": [
+        {
+          "id": 301,
+          "name": "Potato",
+          "price": 40.00,
+          "unit": "kg",
+          "image": "https://i.ibb.co.com/VWBtHx17/10.png",
+           "babge":"new"
+        },
+        {
+          "id": 302,
+          "name": "Onion",
+          "price": 65.00,
+          "unit": "kg",
+          "image": "https://i.ibb.co.com/vxFHvJbB/9.png",
+           "babge":"new"
+        },
+        {
+          "id": 303,
+          "name": "Broccoli",
+          "price": 120.00,
+          "unit": "kg",
+          "image": "https://i.ibb.co.com/Y7k35Nc6/5.png",
+           "babge":"new"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bakery",
+      "description": "Delicious cakes and bakery items made with fresh ingredients.",
+      "image": "https://i.ibb.co.com/Rpb52MMC/Cake.jpg",
+      "items": [
+        {
+          "id": 401,
+          "name": "Cake",
+          "price": 400.00,
+          "unit": "pcs",
+          "image": "https://i.ibb.co.com/27JZkvfG/4.png",
+           "babge":"old"
+        },
+        {
+          "id": 402,
+          "name": "Dry Cake",
+          "price": 250.00,
+          "unit": "box",
+          "image": "https://i.ibb.co.com/V00XwCXX/8.png",
+           "babge":"old"
+        },
+        {
+          "id": 403,
+          "name": "Chocolate Cake",
+          "price": 500.00,
+          "unit": "pcs",
+          "image": "https://i.ibb.co.com/My5ndq8v/7.png",
+           "babge":"old"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Dairy",
+      "description": "Pure and fresh dairy products to keep you strong and healthy.",
+      "image": "https://i.ibb.co.com/Ng7YKH6W/CowMilk.jpg",
+      "items": [
+        {
+          "id": 501,
+          "name": "Cow Milk",
+          "price": 80.00,
+          "unit": "liter",
+          "image": "https://i.ibb.co.com/XfRyZRdL/15.png",
+           "babge":"old"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Meat",
+      "description": "High-quality, fresh meat products directly from trusted suppliers.",
+      "image": "https://i.ibb.co.com/s9QCzYMm/chicken-meat.jpg",
+      "items": [
+        {
+          "id": 601,
+          "name": "Chicken",
+          "price": 250.00,
+          "unit": "kg",
+          "image": "https://i.ibb.co.com/Ng0kTCPh/6.png",
+           "babge":"old"
+        },
+        {
+          "id": 602,
+          "name": "Beef",
+          "price": 750.00,
+          "unit": "kg",
+          "image": "https://i.ibb.co.com/XfY5fj1M/3.png",
+           "babge":"old"
+        }
+      ]
+    }
+  ]
+}
