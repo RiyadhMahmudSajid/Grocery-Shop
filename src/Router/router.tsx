@@ -11,11 +11,16 @@ export const router = createBrowserRouter([
         children: [
             { index: true, Component: Home },
             {
-                path: "/detail/:id",
+                path: "detail/:id", // nested route under HomeLayout
                 Component: SingleDetail,
             },
 
         ]
+
+
+
+
+
 
 
     },
