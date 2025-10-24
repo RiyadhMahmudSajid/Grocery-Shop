@@ -1,3 +1,4 @@
+import CategoryFood from "@/components/MyComponent/Layout/CategoryFood";
 import HomeLayout from "@/components/MyComponent/Layout/HomeLayout";
 import SingleDetail from "@/components/MyComponent/Layout/SingleDetail";
 
@@ -14,9 +15,17 @@ export const router = createBrowserRouter([
                 path: "detail/:id", // nested route under HomeLayout
                 Component: SingleDetail,
             },
+            {
+                path: "cat/:id",
+              
+                Component: CategoryFood
+            }
 
         ]
-
+        //  loader: async ({ params}) =>{
+        //                     const res = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
+        //                      return res.json();
+        //                 },
 
 
 

@@ -35,6 +35,7 @@ const SingleDetail = () => {
             .then((data: CategoryData) => {
                 console.log("Fetched data:", data);
                 const allItems = data.categories.flatMap((cat) => cat.items);
+                console.log("all is",allItems)
                 const found = allItems.find((i) => i.id === Number(id));
                 console.log("Found item:", found);
                 setItem(found || null);
@@ -65,10 +66,7 @@ const SingleDetail = () => {
                 <p className='my-2 font-medium text-2xl'>${item?.price}</p>
                 <p className='text-xl'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, eius quam dolorem iusto aperiam quos aut nam aliquid est fugit!</p>
                 <p className='font-medium my-3'>{item?.unit}</p>
-                {/* <button className='bg-primary text-white flex gap-5 rounded-md h-8  border'>
-                    <Minus className='border-r h-full' />
-                    <Plus className='border-l h-full'></Plus>
-                </button> */}
+              
                 <div className='bg-primary text-white flex  rounded-md h-8 justify-between border w-[20%] lg:w-[30%]'>
                     <button onClick={ handleCountMinus}  className='border-r px-2 cursor-pointer'>
                         <Minus className='' />

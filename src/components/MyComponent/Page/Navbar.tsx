@@ -1,24 +1,59 @@
 
 import { MapPin, Menu, PhoneCall, Search, ShoppingCart } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/dologo.png'
 
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { Link } from 'react-router';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Collapsible, CollapsibleContent } from '@/components/ui/collapsible';
-import { CollapsibleTrigger } from '@radix-ui/react-collapsible';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
-// import { NavigationMenuItem, NavigationMenuLink } from '@/components/ui/navigation-menu';
-// import { Link } from 'react-router';
+
+interface Item {
+    id: number;
+    name: string;
+    price: number;
+    unit: string;
+    image: string;
+    babge: string;
+}
+
+interface Category {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    items: Item[];
+}
+
+interface CategoryData {
+    categories: Category[];
+}
+
 
 const navItems = [
     { title: "Home", href: '/' },
     { title: "Products", href: '/products' },
     { title: "About Us", href: '/contact' },
 ]
-const Navbar = () => {
+const Navbar: React.FC = () => {
+
+    const [catagory, setCatagory] = useState<Category[]>([])
+
+    useEffect(() => {
+        console.log("useEffect fired!");
+        fetch('category.json')
+            .then(res => {
+                if (!res.ok) throw new Error('Network response not ok');
+                return res.json();
+            })
+            .then((data: CategoryData) => {
+                console.log("Fetched categories:", data.categories);
+                setCatagory(data.categories);
+            })
+            .catch(err => console.error("Fetch error:", err));
+    }, []);
 
     return (
         <nav>
@@ -49,7 +84,7 @@ const Navbar = () => {
                             <Menu className=" w-7 h-7 cursor-pointer" />
                         </SheetTrigger>
                         <SheetContent side="left" className="bg-white px-4">
-                            {/* 🔍 Search Bar */}
+                            {/*  Search Bar */}
                             <div className="flex gap-3 justify-center mt-12 pb-3 border-b border-gray-200">
                                 <div className="flex items-center relative w-full">
                                     <Search className="absolute left-3 text-muted-foreground" size={18} />
@@ -61,7 +96,7 @@ const Navbar = () => {
                                 </div>
                             </div>
 
-                            {/* 🔗 Navigation Links */}
+
                             <div className="flex flex-col mt-4 space-y-1 text-center font-medium text-gray-700">
                                 {navItems.map((item) => (
                                     <Link
@@ -73,37 +108,18 @@ const Navbar = () => {
                                     </Link>
                                 ))}
 
-                                {/* 📂 Collapsible Category */}
+
                                 <Collapsible>
                                     <CollapsibleTrigger className="py-2.5 text-center w-full rounded-md hover:bg-primary hover:text-white border-y border-gray-200 font-semibold transition-all duration-200">
                                         Categories
                                     </CollapsibleTrigger>
                                     <CollapsibleContent className="bg-gray-50 mt-1 rounded-md shadow-inner ">
                                         <ul className="flex flex-col py-2 text-gray-700 ">
-                                            <li>
-                                                <Link
-                                                    to=""
-                                                    className="block py-2 hover:bg-primary/10 rounded-md transition-colors"
-                                                >
-                                                    Fruits
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to=""
-                                                    className="block py-2 hover:bg-primary/10 rounded-md transition-colors"
-                                                >
-                                                    Vegetable
-                                                </Link>
-                                            </li>
-                                            <li>
-                                                <Link
-                                                    to=""
-                                                    className="block py-2 hover:bg-primary/10 rounded-md transition-colors"
-                                                >
-                                                    Beverage
-                                                </Link>
-                                            </li>
+                                            {catagory.length > 0 ? (
+                                                catagory.map(cat => <li key={cat.id}>{cat.name}</li>)
+                                            ) : (
+                                                <li>Loading categories...</li>
+                                            )}
                                         </ul>
                                     </CollapsibleContent>
                                 </Collapsible>
@@ -126,19 +142,41 @@ const Navbar = () => {
                             </NavigationMenuItem>))
                         }
 
-                        <NavigationMenuItem >
+                        <NavigationMenuItem className=''>
                             <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <ul>
-                                    <li>
-                                        <Link to=''>Fruits</Link>
+                                <ul className='flex flex-col gap-3 p-3' >
+
+                                    {/* <li>
+                                        <Link
+                                            to=""
+                                            className="block py-2 hover:bg-primary/10 rounded-md transition-colors"
+                                        >
+                                            Fruits
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to=''>Vegitable</Link>
+                                        <Link
+                                            to=""
+                                            className="block py-2 hover:bg-primary/10 rounded-md transition-colors"
+                                        >
+                                            Vegetable
+                                        </Link>
                                     </li>
                                     <li>
-                                        <Link to=''>Beverage</Link>
-                                    </li>
+                                        <Link
+                                            to=""
+                                            className="block py-2 hover:bg-primary/10 rounded-md transition-colors"
+                                        >
+                                            Beverage
+                                        </Link>
+                                    </li> */}
+                                    {catagory.length > 0 ? (
+                                        catagory.map(cat => <li key={cat.id}>{cat.name}</li>)
+                                    ) : (
+                                        <li>Loading categories...</li>
+                                    )}
+
                                 </ul>
                             </NavigationMenuContent>
 
