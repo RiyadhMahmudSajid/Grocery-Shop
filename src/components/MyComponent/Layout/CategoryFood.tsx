@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 
 
 interface Item {
@@ -44,10 +44,10 @@ const CategoryFood = () => {
     }, [id])
 
     return (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
-            {item?.items.map((food) => (
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 min-h-[50vh]">
+            {item?.items.map((food) => (<Link to={`/detail/${food.id}`}  key={food.id}>
                 <div
-                    key={food.id}
+                   
                     className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center"
                 >
 
@@ -79,6 +79,8 @@ const CategoryFood = () => {
                         Add to Cart
                     </button>
                 </div>
+            </Link>
+
             ))}
         </div>
     )

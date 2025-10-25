@@ -14,7 +14,7 @@ const Herrobanner = () => {
 
                 <div className="flex-1 text-center lg:text-left space-y-5 ">
 
-                    <p className="inline-block bg-gray-200 text-gray-700 text-sm md:text-base px-5 py-1.5 rounded-full tracking-wide font-medium shadow-sm">
+                    <p className="inline-block bg-gray-200 text-gray-700 text-sm md:text-[16px] px-5 py-1.5 rounded-full tracking-wide font-medium shadow-sm">
                         THE BEST GROCERY STORE
                     </p>
 

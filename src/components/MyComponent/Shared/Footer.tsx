@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 
 const Footer = () => {
     return (
-        <footer className="bg-primary mt-16 border-t">
+        <footer className="bg-primary">
             <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
 
 
@@ -42,9 +42,9 @@ const Footer = () => {
                     <h3 className="text-lg font-semibold text-gray-100 mb-3">Follow Us</h3>
                     <div className="flex gap-4">
                      
-                        <Link to = ''><Facebook size={20} /></Link>
-                        <Link to = ''><Instagram size={20} /></Link>
-                        <Link to = ''><Twitter size={20} /></Link>
+                        <Link to = 'https://www.facebook.com/'><Facebook color='white' size={20} /></Link>
+                        <Link to = 'https://www.instagram.com/accounts/login/?hl=en'><Instagram color='white' size={20} /></Link>
+                        <Link to = 'https://x.com/'><Twitter color='white' size={20} /></Link>
                     </div>
                 </div>
 

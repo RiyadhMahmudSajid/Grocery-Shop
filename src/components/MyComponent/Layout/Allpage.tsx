@@ -7,8 +7,8 @@ interface Item {
     name: string,
     description: string,
     image: string
-    price:number
-    babge:string
+    price: number
+    babge: string
 }
 interface Category {
     id: number,
@@ -36,8 +36,12 @@ const Allpage: React.FC = () => {
     }, [])
     return (
         <div>
+            <div className=' flex justify-center mt-14 mb-10'>
+
+                <h2 className='text-primary tracking-wide text-3xl  font-bold'>All Food Item 🍏</h2>
+            </div>
             {
-                catagory.map((cat)=><Allpageshow key={cat.id} cat={cat}></Allpageshow>)
+                catagory.map((cat) => <Allpageshow key={cat.id} cat={cat}></Allpageshow>)
             }
         </div>
     );
