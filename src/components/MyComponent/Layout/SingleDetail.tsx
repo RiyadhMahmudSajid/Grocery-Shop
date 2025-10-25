@@ -1,5 +1,5 @@
 import { Minus, Plus } from 'lucide-react';
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 interface Item {
@@ -33,11 +33,11 @@ const SingleDetail = () => {
         fetch("/category.json")
             .then((res) => res.json())
             .then((data: CategoryData) => {
-                console.log("Fetched data:", data);
+                // console.log("Fetched data:", data);
                 const allItems = data.categories.flatMap((cat) => cat.items);
-                console.log("all is",allItems)
+                // console.log("all is",allItems)
                 const found = allItems.find((i) => i.id === Number(id));
-                console.log("Found item:", found);
+                // console.log("Found item:", found);
                 setItem(found || null);
             });
     }, [id]);

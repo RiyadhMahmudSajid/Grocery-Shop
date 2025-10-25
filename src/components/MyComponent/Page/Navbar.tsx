@@ -39,14 +39,14 @@ const Navbar: React.FC = () => {
 
 
     useEffect(() => {
-        console.log("useEffect fired!");
+        // console.log("useEffect fired!");
         fetch('category.json')
             .then(res => {
                 if (!res.ok) throw new Error('Network response not ok');
                 return res.json();
             })
             .then((data: CategoryData) => {
-                console.log("Fetched categories:", data.categories);
+                // console.log("Fetched categories:", data.categories);
                 setCatagory(data.categories);
             })
             .catch(err => console.error("Fetch error:", err));

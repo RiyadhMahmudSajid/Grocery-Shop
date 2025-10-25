@@ -1,6 +1,6 @@
-import React from 'react';
+
 import banner from '../../../assets/Adobe Express - file.png';
-// import { Card, CardContent } from '@/components/ui/card';
+
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import logo from '../../../assets/dologo.png'
 import custom from '../../../assets/Fresh.png'
