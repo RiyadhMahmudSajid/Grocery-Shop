@@ -3,11 +3,11 @@ import { MapPin, Menu, PhoneCall, Search, ShoppingCart } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import logo from '../../../assets/dologo.png'
 
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem,  NavigationMenuList, NavigationMenuTrigger } from '@/components/ui/navigation-menu';
 import { NavLink } from 'react-router';
 import { Input } from '@/components/ui/input';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+
 
 
 interface Item {
@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <nav>
+        <nav className='sticky z-50 top-0'>
             <div className='flex justify-between bg-primary text-primary-foreground py-1.5 border px-12'>
                 <div className='flex  gap-5'>
                     <div className='flex gap-1 items-center text-[14px] font-medium'>
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
                 </div>
             </div>
 
-            <div className='bg-gray-100 flex justify-between gap-4 py-2 px-12 items-center'>
+            <div className='bg-gray-100 flex justify-between gap-4 py-2 px-12 items-center '>
                 <div className="lg:hidden">
                     <Sheet>
                         <SheetTrigger asChild>
@@ -125,7 +125,7 @@ const Navbar: React.FC = () => {
                     <img className='w-12 h-12 ' src={logo}></img>
                     <p className='text-2xl font-bold '> FreshMart</p>
                 </div>
-                <NavigationMenu className='hidden  lg:block'>
+                <NavigationMenu className='hidden  lg:block  z-100'>
                     <NavigationMenuList className=' lg:flex gap-4'>
                         <NavigationMenuItem>
 

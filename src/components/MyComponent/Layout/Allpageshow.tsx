@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ShoppingBagIcon, Star } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 // import { Link } from 'react-router';
 
 
@@ -33,7 +34,9 @@ const Allpageshow: React.FC<AllpageshowProps> = ({ cat }) => {
             <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5  justify-between gap-6'>
 
                 {
-                    cat.items.map((item) => <Link to={`/detail/${item.id}`}><Card className=' relative  bg-gradient-to-b from-gray-100 to bg-white px-3 py-4 rounded-md mb-6' key={item.id}>
+                    cat.items.map((item) => <Link to={`/detail/${item.id}`}>
+                        <Card 
+                        className='transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 relative  bg-gradient-to-b from-gray-100 to bg-white px-3 py-4 rounded-md mb-6' key={item.id}>
                         <div className='w-40 h-36 rounded-md '>
                             <img className=' ' src={item.image}></img>
                         </div>

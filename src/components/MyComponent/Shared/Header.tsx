@@ -5,7 +5,7 @@ import Navbar from '../Page/Navbar';
 const Header = () => {
    
     return (
-        <div>
+        <div >
             <Navbar></Navbar>
            
         </div>
